@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "7b36d31b-34d5-4444-8c81-bb6b4f9181ed",
+		"name": "E-commerce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29186571"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "gender",
+						"value": "Men",
+						"type": "text"
+					},
+					{
+						"key": "style",
+						"value": "Plain color / Red",
+						"type": "text"
+					},
+					{
+						"key": "size",
+						"value": "XS",
+						"type": "text"
+					},
+					{
+						"key": "price",
+						"value": "400",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"item\": \"CNC\",\n    \"qty\": 10,\n    \"price\": 10000,\n    \"gender_type\": \"Male\",\n    \"category_name\": \"Shirt\",\n    \"size_value\": \"XL\",\n    \"style_name\": \"plain,white\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
